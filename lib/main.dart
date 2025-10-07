@@ -4,17 +4,18 @@ import 'package:provider/provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_app/features/lines/presentation/lines_screen.dart';
 import 'package:graduation_app/features/favorite/presentation/favorite_screen.dart';
-import 'package:graduation_app/features/search/presentation/search_screen.dart';
+import 'package:graduation_app/features/search/presentation/screens/search_screen.dart';
 
 void main() {
   runApp(
     ChangeNotifierProvider(
-    create: (_) => ThemeProvider(),
-    child: const MyApp(),
-  ));
+      create: (_) => ThemeProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
-Widget? body = const SearchScreen();
+Widget body = const SearchScreen();
 List<Widget> screens = [
   const SearchScreen(),
   const LinesScreen(),
@@ -71,7 +72,10 @@ class _HomeScreenState extends State<HomeScreen> {
             });
           },
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: "Home",
+            ),
             BottomNavigationBarItem(
               icon: Icon(Icons.directions_bus),
               label: "Lines",
