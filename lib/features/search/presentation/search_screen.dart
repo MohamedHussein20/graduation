@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:graduation_app/core/utils/theme_provider.dart';
-import 'package:graduation_app/features/constants.dart';
 import 'package:provider/provider.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -28,8 +27,8 @@ class _SearchScreenState extends State<SearchScreen> {
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    Color(0xFF4B39EF),
-                    Color(0xFF7C4DFF),
+                    Color(0xFF4052D3),
+                    Color(0xFF7A53B5),
                   ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
@@ -106,11 +105,12 @@ class _SearchScreenState extends State<SearchScreen> {
                   ),
                   SizedBox(height: 20.h),
 
-                  // Dropdown background adapts to theme
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 12.w),
                     decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.surface,
+                      color: Theme.of(
+                        context,
+                      ).colorScheme.surfaceContainerHighest,
                       borderRadius: BorderRadius.circular(10.r),
                     ),
                     child: DropdownButtonHideUnderline(
@@ -143,7 +143,9 @@ class _SearchScreenState extends State<SearchScreen> {
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 12.w),
                     decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.surface,
+                      color: Theme.of(
+                        context,
+                      ).colorScheme.surfaceContainerHighest,
                       borderRadius: BorderRadius.circular(10.r),
                     ),
                     child: DropdownButtonHideUnderline(
@@ -201,6 +203,20 @@ class _SearchScreenState extends State<SearchScreen> {
                   ),
                 ],
               ),
+            ),
+            SizedBox(height: 60.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Image.asset(
+                  "assets/images/blue_corner.png",
+                  width: 100.w,
+                ),
+                Image.asset(
+                  "assets/images/yellow_corner.png",
+                  width: 100.w,
+                ),
+              ],
             ),
           ],
         ),
