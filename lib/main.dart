@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:graduation_app/core/utils/theme_provider.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:graduation_app/features/constants.dart';
 import 'package:graduation_app/features/lines/presentation/lines_screen.dart';
 import 'package:graduation_app/features/favorite/presentation/favorite_screen.dart';
 import 'package:graduation_app/features/search/presentation/search_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+    create: (_) => ThemeProvider(),
+    child: const MyApp(),
+  ));
 }
 
 Widget? body = const SearchScreen();
@@ -26,10 +31,13 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       child: MaterialApp(
-        theme: appTheme,
+        themeMode: themeProvider.themeMode, // <- controlled by provider
+        theme: ThemeData.light(),
+        darkTheme: ThemeData.dark(),
         debugShowCheckedModeBanner: false,
         home: const HomeScreen(),
       ),
