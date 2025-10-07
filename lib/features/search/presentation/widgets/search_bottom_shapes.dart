@@ -9,15 +9,17 @@ class SearchBottomShapes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Image.asset(
-          "assets/images/blue_corner.png",
-          width: 100.w,
+        Padding(
+          padding: EdgeInsets.only(top: 8.h),
+          child: Image.asset(
+            "assets/images/blue_corner.png",
+          ),
         ),
         Image.asset(
           "assets/images/yellow_corner.png",
-          width: 100.w,
         ),
       ],
     );
