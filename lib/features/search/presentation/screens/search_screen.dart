@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:graduation_app/features/search/presentation/widgets/search_bottom_shapes.dart';
 import 'package:graduation_app/features/search/presentation/widgets/search_custom_button.dart';
 import 'package:graduation_app/features/search/presentation/widgets/search_drop_down_menu_item.dart';
 import 'package:graduation_app/features/search/presentation/widgets/search_settings_bar.dart';
@@ -56,15 +55,10 @@ class SearchScreen extends StatelessWidget {
                 SizedBox(height: 16.h),
                 const SearchDropDownMenuItem(),
                 SizedBox(height: 30.h),
-                // 🔹 Button also adapts
                 const SearchCustomButton(),
               ],
             ),
           ),
-          SizedBox(
-            height: 100.h,
-          ),
-          const SearchBottomShapes(),
         ],
       ),
     );
